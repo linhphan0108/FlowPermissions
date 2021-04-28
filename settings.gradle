@@ -1,0 +1,4 @@
+include ':sample'
+include ':lib'
+project(':lib').name = 'flowPermissions'
+rootProject.name = "FlowPermissions"
