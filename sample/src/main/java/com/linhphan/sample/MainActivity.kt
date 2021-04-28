@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun registerEventListeners(){
         binding.enableCamera.setOnClickListener {
             lifecycleScope.launch {
-                flowPermission.requestEachCombined(permission.CAMERA, permission.RECORD_AUDIO)
+                flowPermission.requestEach(permission.CAMERA, permission.RECORD_AUDIO)
                     .catch { Log.e(TAG, it.message, it) }
                     .collect { permissions ->
                         onRequestPermissionResult(permissions)
@@ -111,7 +111,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun openCamera(){
