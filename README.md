@@ -14,9 +14,9 @@ private val flowPermission by lazy { FlowPermissions(this).apply {
 **NOTE:** `FlowPermissions(this)` the `this` parameter can be a FragmentActivity or a Fragment. If you are using `FlowPermissions` inside of a fragment you should pass the fragment instance(`FlowPermissions(this)`) as constructor parameter rather than `new FlowPermissions(fragment.getActivity())` or you could face a `java.lang.IllegalStateException: FragmentManager is already executing transactions`.
 
 
-Example 1 : request the CAMERA permissio
+Example 1 : request the CAMERA and RECORD_AUDIO permission
 ```kotlin
-flowPermission.requestEachCombined(permission.CAMERA, permission.RECORD_AUDIO)
+flowPermission.requestEach(permission.CAMERA, permission.RECORD_AUDIO)
                     .catch { Log.e(TAG, it.message, it) }
                     .collect { permissions ->
                         onRequestPermissionResult(permissions)
