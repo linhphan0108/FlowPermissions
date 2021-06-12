@@ -1,6 +1,21 @@
 # FlowPermissions
 This library allows the usage of Kotlin flow on Android M onwards.
 
+## Gradle Setup
+add to your project gradle
+```gradle
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+add to your app gradle
+```gradle
+implementation 'com.github.linhphan0108:FlowPermissions:master-SNAPSHOT'
+```
+
 ## Usage
 
 Create a `FlowPermissions` instance :
